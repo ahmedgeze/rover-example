@@ -3,8 +3,8 @@ package models;
 public class Rover {
     public static final String SEPERATOR = ":";
     private Direction direction = Direction.N;
-    private int xCordinate;
-    private int yCordinate;
+    private Cordinates cordinates = new Cordinates();
+
 
     public Rover() {
     }
@@ -17,27 +17,19 @@ public class Rover {
         this.direction = direction;
     }
 
-    public int getxCordinate() {
-        return xCordinate;
+    public Cordinates getCordinates() {
+        return cordinates;
     }
 
-    public void setxCordinate(int xCordinate) {
-        this.xCordinate = xCordinate;
-    }
-
-    public int getyCordinate() {
-        return yCordinate;
-    }
-
-    public void setyCordinate(int yCordinate) {
-        this.yCordinate = yCordinate;
+    public void setCordinates(Cordinates cordinates) {
+        this.cordinates = cordinates;
     }
 
     public String getCurrentPosition() {
         var result = new StringBuilder();
-        result.append(xCordinate);
+        result.append(this.cordinates.getxCordinate());
         result.append(SEPERATOR);
-        result.append(yCordinate);
+        result.append(this.cordinates.getyCordinate());
         result.append(SEPERATOR);
         result.append(direction.name());
         return result.toString();

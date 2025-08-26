@@ -25,7 +25,7 @@ public class RoverCalculation {
     }
 
     private void logRoverPosition(Rover rover) {
-        System.out.printf("Rover position is x=%d, y=%d, dir=%s%n", rover.getxCordinate(), rover.getyCordinate(), rover.getDirection().name());
+        System.out.printf("Rover position is x=%d, y=%d, dir=%s%n", rover.getCordinates().getxCordinate(), rover.getCordinates().getyCordinate(), rover.getDirection().name());
     }
 
 

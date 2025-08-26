@@ -39,4 +39,11 @@ class RoverCalculationTest {
         assertThat(response).isEqualTo("0:0:E");
     }
 
+    @Test
+    void it_should_move_for_initial_position_should_be_north() {
+        RoverCalculation roverCalculation = new RoverCalculation();
+        var response = roverCalculation.calculate("M");
+        assertThat(response).isEqualTo("0:1:N");
+    }
+
 }
