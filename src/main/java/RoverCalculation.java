@@ -6,7 +6,26 @@ public class RoverCalculation {
 
     public String calculate(String command) {
         var rover = new Rover();
-        return rover.getCurrentPosition();
+        if (command != null) {
+            String[] commandsList = command.split("");
+            logRoverPosition(rover);
+            for (String commandItem : commandsList) {
+                if (commandItem.equals("L") || commandItem.equals("R")) {
+                    rover.changeDirection(commandItem);
+                    logRoverPosition(rover);
+                } else {
+                    throw new IllegalArgumentException("Direction must be L or R!");
+                }
+
+            }
+            return rover.getCurrentPosition();
+        } else {
+            throw new IllegalArgumentException("Command must not be a null");
+        }
+    }
+
+    private void logRoverPosition(Rover rover) {
+        System.out.printf("Rover position is x=%d, y=%d, dir=%s%n", rover.getxCordinate(), rover.getyCordinate(), rover.getDirection().name());
     }
 
 
