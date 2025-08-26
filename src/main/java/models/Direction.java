@@ -34,5 +34,11 @@ public enum Direction {
         };
     }
 
+    public int getxCordinate() {
+        return xCordinate;
+    }
 
+    public int getyCordinate() {
+        return yCordinate;
+    }
 }

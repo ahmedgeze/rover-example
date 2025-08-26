@@ -21,7 +21,7 @@ class RoverCalculationTest {
         assertThrows(
                 IllegalArgumentException.class,
                 () -> roverCalculation.calculate("SGT"),
-                "Direction must be L or R!"
+                "Command must be L or R or M!"
         );
     }
 
@@ -46,4 +46,25 @@ class RoverCalculationTest {
         assertThat(response).isEqualTo("0:1:N");
     }
 
+    @Test
+    void it_should_move_east_when_command_is_Right_and_Move() {
+        RoverCalculation roverCalculation = new RoverCalculation();
+        var response = roverCalculation.calculate("RM");
+        assertThat(response).isEqualTo("1:0:E");
+    }
+
+
+    @Test
+    void it_should_result_in_2_1_W_when_command_is_Right_Move_Move_Left_Move_Left() {
+        RoverCalculation roverCalculation = new RoverCalculation();
+        var response = roverCalculation.calculate("RMMLML");
+        assertThat(response).isEqualTo("2:1:W");
+    }
+
+    @Test
+    void it_should_return_to_north_when_command_is_Left_Left_Left_Left() {
+        RoverCalculation roverCalculation = new RoverCalculation();
+        var response = roverCalculation.calculate("LLLL");
+        assertThat(response).isEqualTo("0:0:N");
+    }
 }

@@ -8,15 +8,14 @@ public class Cordinates {
         return xCordinate;
     }
 
-    public void setxCordinate(int xCordinate) {
-        this.xCordinate = xCordinate;
-    }
-
     public int getyCordinate() {
         return yCordinate;
     }
 
-    public void setyCordinate(int yCordinate) {
-        this.yCordinate = yCordinate;
+    public void movement(int x, int y) {
+        this.xCordinate += x;
+        this.yCordinate += y;
     }
+
+
 }

@@ -43,4 +43,8 @@ public class Rover {
         }
     }
 
+    public void movement() {
+        getCordinates().movement(getDirection().getxCordinate(), getDirection().getyCordinate());
+    }
+
 }

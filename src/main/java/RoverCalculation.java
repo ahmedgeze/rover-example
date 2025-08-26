@@ -13,8 +13,11 @@ public class RoverCalculation {
                 if (commandItem.equals("L") || commandItem.equals("R")) {
                     rover.changeDirection(commandItem);
                     logRoverPosition(rover);
+                } else if (commandItem.equals("M")) {
+                    rover.movement();
+                    logRoverPosition(rover);
                 } else {
-                    throw new IllegalArgumentException("Direction must be L or R!");
+                    throw new IllegalArgumentException("Command must be L or R or M!");
                 }
 
             }
